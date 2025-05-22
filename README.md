@@ -20,9 +20,6 @@ taxi_api_project/
 ├── requirements.txt
 └── .gitignore
 
-swift
-Kopyala
-Düzenle
 
 ## 🐳 Run with Docker
 
@@ -37,21 +34,17 @@ docker run --rm -d \
   -p 5432:5432 \
   -v postgresql15_v:/var/lib/postgresql/data \
   postgres:15
-Create the database and user:
 
-sql
-Kopyala
-Düzenle
 CREATE DATABASE traindb;
 CREATE USER train WITH ENCRYPTED PASSWORD 'Ankara06';
 GRANT ALL PRIVILEGES ON DATABASE traindb TO train;
 \c traindb
 GRANT ALL PRIVILEGES ON SCHEMA public TO train;
+
+Note: Replace <YOUR_PASSWORD_HERE> with a strong password of your choice. Avoid committing passwords directly to version control.
+
 🚦 Running the API
 Activate your virtual environment and run:
 
-bash
-Kopyala
-Düzenle
 uvicorn main:app --host 0.0.0.0 --port 8000
 Then go to: http://localhost:8000/docs
