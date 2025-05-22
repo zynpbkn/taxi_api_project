@@ -29,14 +29,14 @@ Make sure PostgreSQL is running via Docker:
 docker run --rm -d \
   --name postgresql \
   -e POSTGRES_USER=postgres \
-  -e POSTGRES_PASSWORD=Ankara06 \
+  -e POSTGRES_PASSWORD=<YOUR_PASSWORD_HERE> \
   -e PGDATA=/var/lib/postgresql/data/pgdata \
   -p 5432:5432 \
   -v postgresql15_v:/var/lib/postgresql/data \
   postgres:15
 
 CREATE DATABASE traindb;
-CREATE USER train WITH ENCRYPTED PASSWORD 'Ankara06';
+CREATE USER train WITH ENCRYPTED PASSWORD '<YOUR_PASSWORD_HERE>';
 GRANT ALL PRIVILEGES ON DATABASE traindb TO train;
 \c traindb
 GRANT ALL PRIVILEGES ON SCHEMA public TO train;
